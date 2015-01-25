@@ -458,7 +458,7 @@ def annotate(file):  #and now for our main event
                         refmismatch = True  #set this value so the rest of the program knows the line has mismatched references
                         if reflinearray[3] in observedarray:  #if the reference value from ExAC was observed as an alternate allele in the data
                             for allele in observedarray:  #and if we iterate through each allele
-                                if allele == reflinearray[3] or allele in exactalts:  #and find that each allele was listed as either the reference or alternate allele in ExAC
+                                if allele == reflinearray[3] or allele in exacalts:  #and find that each allele was listed as either the reference or alternate allele in ExAC
                                     refandaltswapped = True  #we set this value to true, since the reference and alternates were swapped between sources.  We will still not make a call, but the message displayed will be different (this sometimes happens with very common variants where differnt sources think one is more common and call it reference)
                         if refandaltswapped:
                             print('Reference and alternate alleles swapped between input and ExAC on line ' + str(linenumber) + '.')
